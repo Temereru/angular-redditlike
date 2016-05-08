@@ -1,0 +1,12 @@
+<a href="/">return</a>
+<h1>{{currentPost.content}}</h1>
+<div class="posts" ng-repeat="comment in currentPost.comments | orderBy: '-likes' track by $index">
+  <p><i class="fa fa-thumbs-o-up" aria-hidden="true" ng-click="addCommentLike($index)"></i><span>{{comment.likes}}</span>
+  - by {{comment.commentor}} <span class="comment-content">{{comment.content}}</span></p>
+</div>
+<form class="post-form">
+  <h1>Add a new comment</h1>
+  <input type="text" placeholder="write your comment" class="form-control" ng-model="commentInput.content"></input>
+  <input type="text" placeholder="Write you name" class="form-control" ng-model="commentInput.commentor"></input>
+  <button class="btn btn-primary" ng-click="addComment()">Submit</button>
+</form>

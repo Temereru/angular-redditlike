@@ -1,5 +1,5 @@
-.post-content {
-  font-size: 18px;
+.post-content, .comment-content {
+  font-size: 22px;
 }
 
 .fa-thumbs-o-up{
